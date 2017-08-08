@@ -1,0 +1,200 @@
+<?php
+/* Smarty version 3.1.30, created on 2016-08-24 05:28:02
+  from "D:\wamp\AppServ\www\simovision\tpls\templates\contact.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_57bd30629eaee3_88470143',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '7a4fb7ad801f5d960f03f83629728581aa954e24' => 
+    array (
+      0 => 'D:\\wamp\\AppServ\\www\\simovision\\tpls\\templates\\contact.html',
+      1 => 1471593227,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:head-index.html' => 1,
+    'file:footer.html' => 1,
+  ),
+),false)) {
+function content_57bd30629eaee3_88470143 (Smarty_Internal_Template $_smarty_tpl) {
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+  <title>联系我们</title>
+  <meta name="keywords" content="设计网站,原创,创意，网页设计,网站设计,设计素材,佳作欣赏,经验,教程,高清图片。" />
+  <meta name="description" content="专注高品质网站设计，为您的品牌缔造经典，让营销更具价值，良好的用户体验，全面提升您的企业形象，响应式的页面布局，交互式的设计体验，多元化的设计风格，优秀的设计团队，优化的设计流程，施工管理流程，品类丰富，管理科学的材料集采平台，便捷高效的客户服务体系。我们将竭力提供设计导航服务!" />
+  <link rel="icon" href="http://static.simovision.cn/favicon.png"/>
+  <!--Main StyleSheet-->
+  <link rel="stylesheet" href="tpls/templates/css/style.min.css">
+  <!--Main Script-->
+  <?php echo '<script'; ?>
+ src="tpls/templates/js/index.min.js"><?php echo '</script'; ?>
+>
+  <?php echo '<script'; ?>
+ type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=485a9e87c98054c55b50404385e10ed1"><?php echo '</script'; ?>
+>
+
+</head>
+<body>
+
+<?php $_smarty_tpl->_subTemplateRender("file:head-index.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
+
+<!--静态banner-->
+<div class="staticBanner">
+      <img src="http://static.simovision.cn/tpls/templates/images/contact.jpg" alt="联系思威">
+
+</div>
+
+
+<div id="contactContent">
+  <div class="container">
+
+
+    <div class="row contactCnt">
+
+      <h3 class="detail-til">
+        <span>CONTACT US</span>
+        <strong>联系思威</strong>
+      </h3>
+
+      <div class="text-content">
+        <p>
+          IF YOU HAVE ANY QUESTION PLEASE
+        </p>
+
+        <img src="http://static.simovision.cn/tpls/templates/images/contact_us.jpg" alt="联系思威">
+
+      </div>
+
+
+      <div class="contact-content">
+        <div class="span6">
+        <span class="contact-icon building">
+        </span>
+          <font>地址：北京市朝阳区朝外大街东大桥山水铂宫D座504</font>
+        </div>
+
+        <div class="span6">
+        <span class="contact-icon telephone">
+        </span>
+          <font>座机：010-60572002</font>
+        </div>
+
+        <div class="span6">
+        <span class="contact-icon mobile">
+        </span>
+          <font>手机：+86 18910087009</font>
+        </div>
+
+        <div class="span6">
+        <span class="contact-icon email">
+        </span>
+          <font>Email：simovision@163.com</font>
+        </div>
+
+        <div class="span6">
+        <span class="contact-icon internet">
+        </span>
+          <font>网址：http://www.simovision.cn</font>
+        </div>
+
+        <div class="span6">
+        <span class="contact-icon service">
+        </span>
+          <font>客服：010-56190291</font>
+        </div>
+
+      </div>
+
+      <div class="map-content">
+        <div id="map"></div>
+
+      </div>
+
+
+
+    </div>
+
+
+
+  </div>
+</div>
+
+<?php echo '<script'; ?>
+>
+  $(function(){
+    //创建和初始化地图函数：
+    function initMap(){
+      createMap();//创建地图
+      setMapEvent();//设置地图事件
+      addMapControl();//向地图添加控件
+      addMapOverlay();//向地图添加覆盖物
+    }
+    function createMap(){
+      map = new BMap.Map("map");
+      map.centerAndZoom(new BMap.Point(116.454204,39.930924),19);
+    }
+    function setMapEvent(){
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom()
+    }
+    function addClickHandler(target,window){
+      target.addEventListener("click",function(){
+        target.openInfoWindow(window);
+      });
+    }
+    function addMapOverlay(){
+      var markers = [
+        {content:"山水铂宫D座504",title:"思威视觉文化传播",imageOffset: {width:0,height:3},position:{lat:39.931159,lng:116.454011}}
+      ];
+      for(var index = 0; index < markers.length; index++ ){
+        var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
+        var marker = new BMap.Marker(point,{icon:new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png",new BMap.Size(20,25),{
+          imageOffset: new BMap.Size(markers[index].imageOffset.width,markers[index].imageOffset.height)
+        })});
+        var label = new BMap.Label(markers[index].title,{offset: new BMap.Size(25,5)});
+        var opts = {
+          width: 200,
+          title: markers[index].title,
+          enableMessage: false
+        };
+        var infoWindow = new BMap.InfoWindow(markers[index].content,opts);
+        marker.setLabel(label);
+        addClickHandler(marker,infoWindow);
+        map.addOverlay(marker);
+      };
+    }
+    //向地图添加控件
+    function addMapControl(){
+      var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+      map.addControl(navControl);
+      var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
+      map.addControl(overviewControl);
+    }
+    var map;
+    initMap();
+  })
+
+<?php echo '</script'; ?>
+>
+
+<?php $_smarty_tpl->_subTemplateRender("file:footer.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}
+}
